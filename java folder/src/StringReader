@@ -1,0 +1,28 @@
+package com.demo;
+
+import java.io.StringReader;
+
+public class StringReader {
+    public static void main(String[] args) {
+
+        String data = "This is the text read from StringReader.";
+
+        // Create a character array
+        char[] c = new char[data.length()];
+
+        try {
+            // Create a StringReader
+            StringReader input = new StringReader(data);
+
+            //Use the read method
+            input.read(c);
+            System.out.println("Data read from the string:");
+            System.out.println(c);
+
+            input.close();
+        }
+        catch(Exception e) {
+            e.getStackTrace();
+        }
+    }
+}
