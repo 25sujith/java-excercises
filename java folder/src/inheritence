@@ -1,0 +1,68 @@
+package com.demo;
+
+public class Arithmetic2 {
+    public int add(int a, int b){
+        return a+b;
+    }
+    public int sub(int a, int b){
+        return a-b;
+    }
+    public int mul(int a, int b){
+        return a*b;
+    }
+    public int div(int a, int b){
+        return a/b;
+    }
+}
+
+
+
+package com.demo;
+
+public class Statistics extends Arithmetic2{
+    public float mean(int a,int b, int c, int d){
+        return (a+b+c+d)/4;
+    }
+    public float median(int a,int b, int c, int d){
+        return (b+c)/2;
+    }
+}
+
+
+
+
+package com.demo;
+
+public class Stats extends Statistics {
+    public float mode(int a,int b,int c, int d){
+        return ((3*median(a,b,c,d))-(2*mean(a,b,c,d)));
+    }
+}
+
+
+
+
+package com.demo;
+
+
+import java.util.Scanner;
+
+public class StatOps extends Stats{
+    public static void main(String[] args) {
+        StatOps s1 = new StatOps();
+        System.out.println("Enter 4 values in ascending order:");
+        Scanner a = new Scanner(System.in);
+        Scanner b = new Scanner(System.in);
+        Scanner c = new Scanner(System.in);
+        Scanner d = new Scanner(System.in);
+        int m = a.nextInt();
+        int n = a.nextInt();
+        int o = a.nextInt();
+        int p = a.nextInt();
+        System.out.println("m: "+m+" n: "+n+" o: "+o+" p: "+p);
+        System.out.println("mean of above nums: "+s1.mean(m,n,o,p));
+        System.out.println("median of above nums: "+s1.median(m,n,o,p));
+        System.out.println("mode of above nums: "+s1.mode(m,n,o,p));
+    }
+}
+
